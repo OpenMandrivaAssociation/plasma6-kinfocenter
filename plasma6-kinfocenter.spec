@@ -47,7 +47,6 @@ BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Widgets)
 BuildRequires: cmake(Qt6Test)
 BuildRequires: pkgconfig(libusb-1.0)
-BuildRequires: systemsettings
 BuildRequires: vulkan-tools
 BuildRequires: wayland-utils
 BuildRequires: xdpyinfo
@@ -60,7 +59,6 @@ BuildRequires: fwupd
 BuildRequires: aha
 %endif
 BuildRequires: clinfo
-Requires: plasma6-systemsettings
 Requires: vulkan-tools
 Requires: wayland-utils
 Requires: xdpyinfo
@@ -73,7 +71,6 @@ Requires: fwupd
 Requires: aha
 %endif
 Requires: clinfo
-Obsoletes: about-distro
 
 %description
 KDE Plasma 6 Info Center.
