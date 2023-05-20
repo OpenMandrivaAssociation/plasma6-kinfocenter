@@ -1,0 +1,12 @@
+diff -Naur kinfocenter-5.5.3/Modules/about-distro/src/Module.cpp kinfocenter-5.5.3.tpg/Modules/about-distro/src/Module.cpp
+--- kinfocenter-5.5.3/Modules/about-distro/src/Module.cpp	2016-01-06 12:03:25.000000000 +0000
++++ kinfocenter-5.5.3.tpg/Modules/about-distro/src/Module.cpp	2016-01-10 00:31:03.642840421 +0000
+@@ -104,7 +104,7 @@
+         logo = QIcon::fromTheme(QStringLiteral("start-here-kde")).pixmap(128, 128);
+     else
+         logo = QPixmap(logoPath);
+-    ui->logoLabel->setPixmap(logo);
++    ui->logoLabel->setPixmap(logo).pixmap(128, 128);
+ 
+     OSRelease os;
+     // We allow overriding of the OS name for branding purposes.
