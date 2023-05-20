@@ -32,6 +32,7 @@ BuildRequires: cmake(KF6Service)
 BuildRequires: cmake(KF6Solid)
 BuildRequires: cmake(KF6WidgetsAddons)
 BuildRequires: cmake(KF6XmlGui)
+BuildRequires: cmake(KF6Kirigami2)
 BuildRequires: pkgconfig(glu)
 BuildRequires: pkgconfig(libpci)
 BuildRequires: pkgconfig(libraw1394)
@@ -46,7 +47,6 @@ BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Widgets)
 BuildRequires: cmake(Qt6Test)
 BuildRequires: pkgconfig(libusb-1.0)
-BuildRequires: kirigami
 BuildRequires: systemsettings
 BuildRequires: vulkan-tools
 BuildRequires: wayland-utils
@@ -60,8 +60,7 @@ BuildRequires: fwupd
 BuildRequires: aha
 %endif
 BuildRequires: clinfo
-Requires: kirigami
-Requires: systemsettings
+Requires: plasma6-systemsettings
 Requires: vulkan-tools
 Requires: wayland-utils
 Requires: xdpyinfo
