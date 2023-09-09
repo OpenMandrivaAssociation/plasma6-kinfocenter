@@ -1,5 +1,5 @@
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20230901
+%define git 20230909
 
 Name: plasma6-kinfocenter
 Version: 5.240.0
@@ -105,7 +105,7 @@ KDE Plasma 6 Info Center.
 %{_datadir}/applications/org.kde.kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
 %{_datadir}/kinfocenter/categories/*.desktop
-%{_libdir}/libexec/kauth/kinfocenter-dmidecode-helper
+%{_libdir}/libexec/kf6/kauth/kinfocenter-dmidecode-helper
 %{_datadir}/applications/kcm_about-distro.desktop
 %{_datadir}/dbus-1/system-services/org.kde.kinfocenter.dmidecode.service
 %{_datadir}/dbus-1/system.d/org.kde.kinfocenter.dmidecode.conf
