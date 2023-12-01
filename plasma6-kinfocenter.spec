@@ -60,8 +60,6 @@ BuildRequires: fwupd
 BuildRequires: aha
 %endif
 BuildRequires: clinfo
-# Don't pull in Plasma 5
-BuildRequires: plasma6-xdg-desktop-portal-kde
 Requires: vulkan-tools
 Requires: wayland-utils
 Requires: xdpyinfo
