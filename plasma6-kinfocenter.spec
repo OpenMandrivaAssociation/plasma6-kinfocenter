@@ -1,11 +1,13 @@
 %define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
-#define git 20231103
+%define git 20240217
+%define gitbranch Plasma/6.0
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: plasma6-kinfocenter
-Version: 5.93.0
+Version: 5.94.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
-Source0: https://invent.kde.org/plasma/kinfocenter/-/archive/master/kinfocenter-master.tar.bz2#/kinfocenter-%{git}.tar.bz2
+Source0: https://invent.kde.org/plasma/kinfocenter/-/archive/%{gitbranch}/kinfocenter-%{gitbranchd}.tar.bz2#/kinfocenter-%{git}.tar.bz2
 %else
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/kinfocenter-%{version}.tar.xz
 %endif
@@ -77,7 +79,7 @@ Requires: clinfo
 KDE Plasma 6 Info Center.
 
 %prep
-%autosetup -p1 -n kinfocenter-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n kinfocenter-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DBUILD_QCH:BOOL=ON \
 	-DBUILD_WITH_QT6:BOOL=ON \
