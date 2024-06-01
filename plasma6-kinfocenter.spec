@@ -5,7 +5,7 @@
 
 Name: plasma6-kinfocenter
 Version: 6.0.5
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/kinfocenter/-/archive/%{gitbranch}/kinfocenter-%{gitbranchd}.tar.bz2#/kinfocenter-%{git}.tar.bz2
 %else
@@ -63,8 +63,8 @@ BuildRequires: aha
 %endif
 BuildRequires: clinfo
 Requires: vulkan-tools
-Requires: wayland-utils
-Requires: xdpyinfo
+Requires: (wayland-utils if kf6-kwindowsystem-backend-wayland)
+Requires: (xdpyinfo if kf6-kwindowsystem-backend-x11)
 Requires: eglinfo
 Requires: glxinfo
 Requires: pciutils
@@ -74,24 +74,15 @@ Requires: fwupd
 Requires: aha
 %endif
 Requires: clinfo
+BuildSystem: cmake
+BuildOption: -DBUILD_QCH:BOOL=ON
+BuildOption: -DBUILD_WITH_QT6:BOOL=ON
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 KDE Plasma 6 Info Center.
 
-%prep
-%autosetup -p1 -n kinfocenter-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-
+%install -a
 %find_lang kinfocenter --all-name --with-html
 
 %files -f kinfocenter.lang
