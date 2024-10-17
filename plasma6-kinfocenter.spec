@@ -12,7 +12,7 @@ Source0: https://invent.kde.org/plasma/kinfocenter/-/archive/%{gitbranch}/kinfoc
 Source0: http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/kinfocenter-%{version}.tar.xz
 %endif
 Summary: KDE Plasma 6 Info Center
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(KF6DocTools)
