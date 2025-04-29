@@ -75,6 +75,7 @@ Requires: fwupd
 Requires: aha
 %endif
 Requires: clinfo
+Requires: libdisplay-info >= 0.2.0
 BuildSystem: cmake
 BuildOption: -DBUILD_QCH:BOOL=ON
 BuildOption: -DBUILD_WITH_QT6:BOOL=ON
